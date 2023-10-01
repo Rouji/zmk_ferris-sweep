@@ -9,6 +9,9 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LGUI k3  &ht LALT k4
 #define HRMR(k1,k2,k3,k4) &ht RALT k1  &ht RGUI k2  &ht RCTRL k3  &ht RSHFT k4
 
+// combo macro
+#define COMBO(name, pos, bind) name { timeout-ms = <50>; key-positions = pos ; bindings = bind ; };
+
 / {
     behaviors {
         ht: hold_tap {
@@ -39,37 +42,17 @@
             bindings = <&kp ESC>;
         };
 
-        combo_caps { timeout-ms = <50>; key-positions = <10 19>; bindings = <&caps_word>; };
+        COMBO(combo_caps,  <10 19>, <&caps_word>)
 
-        combo_del  { timeout-ms = <50>; key-positions = <32 33>; bindings = <&kp DEL>; };
-        combo_lpar { timeout-ms = <50>; key-positions = <12 13>; bindings = <&kp LPAR>; };
-        combo_rpar { timeout-ms = <50>; key-positions = <16 17>; bindings = <&kp RPAR>; };
-        combo_lbkt { timeout-ms = <50>; key-positions = <2  3 >; bindings = <&kp LBKT>; };
-        combo_rbkt { timeout-ms = <50>; key-positions = <6  7 >; bindings = <&kp RBKT>; };
-        combo_lbrc { timeout-ms = <50>; key-positions = <11 12>; bindings = <&kp LBRC>; };
-        combo_rbrc { timeout-ms = <50>; key-positions = <17 28>; bindings = <&kp RBRC>; };
-        combo_lt { timeout-ms = <50>; key-positions = <1 2>; bindings = <&kp LT>; };
-        combo_gt { timeout-ms = <50>; key-positions = <7 8>; bindings = <&kp GT>; };
-
-        combo_plus { timeout-ms = <50>; key-positions = <0 10>; bindings = <&kp PLUS>; };
-        combo_equal { timeout-ms = <50>; key-positions = <1 11>; bindings = <&kp EQUAL>; };
-        combo_minus { timeout-ms = <50>; key-positions = <2 12>; bindings = <&kp MINUS>; };
-        combo_under { timeout-ms = <50>; key-positions = <3 13>; bindings = <&kp UNDER>; };
-
-        combo_excl { timeout-ms = <50>; key-positions = <10 20>; bindings = <&kp EXCL>; };
-        combo_at { timeout-ms = <50>; key-positions = <11 21>; bindings = <&kp AT>; };
-        combo_hash { timeout-ms = <50>; key-positions = <12 22>; bindings = <&kp HASH>; };
-        combo_dllr { timeout-ms = <50>; key-positions = <13 23>; bindings = <&kp DLLR>; };
-        combo_prcnt { timeout-ms = <50>; key-positions = <14 24>; bindings = <&kp PRCNT>; };
-
-        combo_sqt { timeout-ms = <50>; key-positions = <6 16>; bindings = <&kp SQT>; };
-        combo_dqt { timeout-ms = <50>; key-positions = <7 17>; bindings = <&kp DQT>; };
-        combo_pipe { timeout-ms = <50>; key-positions = <8 18>; bindings = <&kp PIPE>; };
-        combo_bslh { timeout-ms = <50>; key-positions = <9 19>; bindings = <&kp BSLH>; };
-
-        combo_caret{ timeout-ms = <50>; key-positions = <15 25>; bindings = <&kp CARET>; };
-        combo_amps { timeout-ms = <50>; key-positions = <16 26>; bindings = <&kp AMPS>; };
-        combo_astrk { timeout-ms = <50>; key-positions = <17 27>; bindings = <&kp ASTRK>; };
+        COMBO(combo_del,   <32 33>, <&kp DEL>)
+        COMBO(combo_lpar,  <12 13>, <&kp LPAR>)
+        COMBO(combo_rpar,  <16 17>, <&kp RPAR>)
+        COMBO(combo_lbkt,  <2  3 >, <&kp LBKT>)
+        COMBO(combo_rbkt,  <6  7 >, <&kp RBKT>)
+        COMBO(combo_lbrc,  <11 12>, <&kp LBRC>)
+        COMBO(combo_rbrc,  <17 18>, <&kp RBRC>)
+        COMBO(combo_lt,    <1  2 >, <&kp LT>)
+        COMBO(combo_gt,    <7  8 >, <&kp GT>)
     };
 
     keymap {
