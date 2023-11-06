@@ -10,7 +10,7 @@
 #define HRMR(k1,k2,k3,k4) &ht RALT k1  &ht RGUI k2  &ht RCTRL k3  &ht RSHFT k4
 
 // combo macro
-#define COMBO(name, pos, bind) name { timeout-ms = <50>; key-positions = pos ; bindings = bind ; };
+#define COMBO(name, pos, bind) name { timeout-ms = <20>; key-positions = pos ; bindings = bind ; };
 
 / {
     behaviors {
